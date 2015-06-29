@@ -1,3 +1,49 @@
+
+
+def read_category_maps():
+    """ Category codes from: http://www.ffiec.gov/hmdarawdata/FORMATS/2012HMDACodeSheet.pdf"""
+    
+    import os
+    import csv
+    
+    d = os.path.dirname(__file__)
+    
+    maps = {}
+    
+    with open(os.path.join(d,'category_maps.csv')) as f:
+        for row in csv.DictReader(f):
+            if row['column'] not in maps:
+                maps[row['column']] = {}
+                
+
+            maps[row['column']][str(row['code'])] = row['label']
+        
+        
+    return maps
+    
+def add_category_column(df, column, maps = None):
+    """Create a category column, with a _c suffix, from a colum that has it's name specified in the 
+    category_maps.csv file"""
+    
+    name = column.name
+    cat_col_name = column.name+"_c"
+    
+    if maps is None:
+        maps = read_category_maps()
+    col_map = maps[name]
+    
+    df[cat_col_name] = column.astype('category')
+    df[cat_col_name].cat.rename_categories([ col_map[str(i)] for i in list(df[cat_col_name].cat.categories)], inplace = True)
+  
+def add_all_category_columns(df):
+    
+    maps = read_category_maps()
+    
+    for column_name, v in maps.items():
+        print "Adding category column for ", column_name
+        add_category_column(df, df[column_name], maps)
+    
+
 def reformat_tract(v):
     v = str(v)
     if '.' in v:
