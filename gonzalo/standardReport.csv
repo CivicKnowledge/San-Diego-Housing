@@ -1,0 +1,22 @@
+,,median,count,%count,amount,%amount
+Loan Purpose and Type,improvement,161.0,4781,2.0,1038687,1.3
+Loan Purpose and Type,purchase-conventional,304.0,32857,13.5,12419787,15.1
+Loan Purpose and Type,purchase-govt,320.0,22240,9.2,7551607,9.2
+Loan Purpose and Type,refinance,297.0,182905,75.3,61055963,74.4
+Applicant Race/Eth,aian,280.0,767,0.3,231319,0.3
+Applicant Race/Eth,as,308.0,23920,9.9,7808190,9.5
+Applicant Race/Eth,b,270.0,4053,1.7,1139822,1.4
+Applicant Race/Eth,h,251.0,24012,9.9,6385159,7.8
+Applicant Race/Eth,pi,293.0,1908,0.8,570463,0.7
+Applicant Race/Eth,w,305.0,142000,58.5,48384565,59.0
+Applicant Income,high,787.5,1198,0.5,1344670,1.6
+Applicant Income,low,292.0,207208,85.3,64534660,78.6
+Applicant Income,mid,646.0,1557,0.6,1344339,1.6
+Applicant Income,mod,546.0,4278,1.8,2947579,3.6
+Applicant Sex,1,312.0,159485,65.7,54930806,66.9
+Applicant Sex,2,258.0,50394,20.8,14172171,17.3
+Applicant Sex,3,295.0,17527,7.2,5939329,7.2
+Applicant Sex,4,300.0,15377,6.3,7023738,8.6
+Occupancy,1,307.0,208353,85.8,70232806,85.6
+Occupancy,2,240.0,33252,13.7,9353423,11.4
+Occupancy,3,825.0,1178,0.5,2479815,3.0
