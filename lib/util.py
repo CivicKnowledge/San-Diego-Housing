@@ -32,8 +32,14 @@ def add_category_column(df, column, maps = None):
         maps = read_category_maps()
     col_map = maps[name]
     
+    def try_int(f):
+        try:
+            return int(f)
+        except:
+            return f
+    
     df[cat_col_name] = column.astype('category')
-    df[cat_col_name].cat.rename_categories([ col_map[str(i)] for i in list(df[cat_col_name].cat.categories)], inplace = True)
+    df[cat_col_name].cat.rename_categories([ col_map[str(try_int(i))] for i in list(df[cat_col_name].cat.categories)], inplace = True)
   
 def add_all_category_columns(df):
     
